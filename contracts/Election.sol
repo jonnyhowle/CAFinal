@@ -1,6 +1,12 @@
 pragma solidity ^0.4.24;
 
-contract Election {
+//import "openzeppelin-solidity/contracts/math/SafeMath.sol";
+import "./Ownable.sol";
+
+/** @title Voting Dapp. */
+
+contract Election is Ownable {
+
     // Model a Candidate
     struct Candidate {
         uint id;
@@ -14,6 +20,12 @@ contract Election {
     mapping(uint => Candidate) public candidates;
     // Store Candidates Count
     uint public candidatesCount;
+
+    // voted event
+    event votedEvent (
+        uint indexed _candidateId
+    );
+
     // Constructor: This function runs when the contract is deployed. It runs the addCandidate function twice to add 2 intitial candidates to populate the UI.
     function Election () public {
         addCandidate("Candidate 1");
@@ -38,6 +50,9 @@ contract Election {
         
         // update candidate vote count
         candidates[_candidateId].voteCount ++;
+
+        // trigger voted event
+        votedEvent(_candidateId);
     }
 
 }

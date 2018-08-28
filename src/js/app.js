@@ -57,6 +57,8 @@ App = {
     });
   },
 
+  
+
   render: function() {
     var electionInstance;
     var loader = $("#loader");
