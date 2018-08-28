@@ -6,7 +6,7 @@ This project is a simple voting dApp that creates an election between two candid
 
 ## Running Project
 
-Clone project: ```git clone https://github.com/jonnyhowle/ConsenSysAcademy.git```
+Clone project: ```git clone https://github.com/jonnyhowle/CAFinal.git```
 
 ```cd consensysAcademy```
 
